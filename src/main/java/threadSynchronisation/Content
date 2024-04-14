@@ -1,0 +1,15 @@
+
+
+
+|>-- Thread Memory Model --<|
+-> Threads are lightweight processes
+   > Threads of the same process run in a shared memory space which is shared with the process
+   > Processes run in a separate memory space
+
+-> Two types of Memory Space
+   > Stack Space : Local variables, method arguments, methods calls, etc are stored here
+   > Heap Space : Objects are stored in this space, and they are stored as long as they being referenced somewhere
+
+-> Every thread has its own Stack space, but all threads share the Heap memory of the process (under which they are created)
+   > Since the memory space is shared between threads, synchronisation becomes very important!
+
