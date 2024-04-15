@@ -49,34 +49,23 @@ by the java.util.concurrent package, such as Lock interfaces, ReentrantLock, Rea
 
 LockWithCustomObjects -- Code this
 
-|> -- Synchronisation -- <|
--> Race condition
+## 
+Wait and notify
+Introduction to wait and notify
+    Now with an understanding of the synchronsation it's time to understand teh cocenpt of wait() and notify()
+    <Room analogy explanation>
+Code the WaitNotifyDemo
 
 
-|> -- Synchronisation Issues & Considerations <|
+Differene between wait and sleep 
+    wait() is used for inter-thread communication and synchronization, while sleep() is used for pausing the execution of a thread for a specified duration.
+
+## Implement producer and consumer
 
 
-|> -- Locking with custom objects -- <|
 
 
-|> -- Wait & Notify -- <|
 
 
-|> -- Difference between wait & sleep -- <|
 
-
-|> -- Producer & Consumer --<|
-
-
-|>-- Thread Memory Model --<|
--> Threads are lightweight processes
-   > Threads of the same process run in a shared memory space which is shared with the process
-   > Processes run in a separate memory space
-
--> Two types of Memory Space
-   > Stack Space : Local variables, method arguments, methods calls, etc are stored here
-   > Heap Space : Objects are stored in this space, and they are stored as long as they being referenced somewhere
-
--> Every thread has its own Stack space, but all threads share the Heap memory of the process (under which they are created)
-   > Since the memory space is shared between threads, synchronisation becomes very important!
 
