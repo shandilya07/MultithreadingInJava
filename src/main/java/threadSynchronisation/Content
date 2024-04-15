@@ -1,4 +1,43 @@
+##
+Code the Synchronisation demo and showcase the fault
+    -> [Code the Synchronisation demo without fix]
+    -> [Run the code and show the inconsistency]
+Tell about the issue
+    -> Non Atomic operation being handled by more than one threads
+    -> How does addition operation work
+    -> With the above example, introduce race condition
+    -> How can we avoid this race condition?
+    -> Natural solution is allow only one thread to work on the shared resource at a time
+    -> Introduce critical section
+    -> What are the ways to create the critical section?
+    -> Usage of synchronised keyword
+    -> Implement the solution with synchronisation
 
+
+##
+Issues with synchronisation
+
+
+
+
+
+|> -- Synchronisation -- <|
+-> Race condition
+
+
+|> -- Synchronisation Issues & Considerations <|
+
+
+|> -- Locking with custom objects -- <|
+
+
+|> -- Wait & Notify -- <|
+
+
+|> -- Difference between wait & sleep -- <|
+
+
+|> -- Producer & Consumer --<|
 
 
 |>-- Thread Memory Model --<|
