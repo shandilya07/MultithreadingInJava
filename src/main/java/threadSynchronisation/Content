@@ -13,7 +13,9 @@ Tell about the issue
     -> Usage of synchronised keyword
     -> Implement the solution with synchronisation
 
-## 
+
+##
+Issues with synchronisation
 How deos synchronised kw work in java?
 
 1. Monitor Locks: Each object in Java is associated with a monitor, which is a mutual exclusion mechanism used for synchronization. When a thread enters a 
@@ -30,11 +32,6 @@ the lock to proceed.
 Each object in Java has its own intrinsic lock, and the synchronized keyword acquires and releases this lock implicitly when used at the method level or in synchronized 
 blocks.
 
-
-##
-Issues with synchronisation
-
-* How synchronised keyword works under the hood
 * It's problematic though due to 
     * Coarse-grained locking: When you use synchronized at the method level, it applies the lock to the entire method body. This means that if multiple 
       threads are accessing different parts of the method that don't necessarily need synchronization, they will still be serialized. This can lead to 
@@ -45,10 +42,12 @@ Issues with synchronisation
     * Inheritance issues: When a subclass overrides a synchronized method from its superclass, it must also explicitly declare the method as synchronized 
       if it wants to maintain the synchronization behavior. Failure to do so can lead to unexpected behavior and potential synchronization issues.
 
+Code SychronisationIssue -- Don't code, just give an example
 
 To address these concerns, it's often recommended to use explicit locking with synchronized blocks or to use the more flexible concurrency utilities provided 
 by the java.util.concurrent package, such as Lock interfaces, ReentrantLock, ReadWriteLock, etc. which we are going to learn going forward in this tutorial
 
+LockWithCustomObjects -- Code this
 
 |> -- Synchronisation -- <|
 -> Race condition
