@@ -1,0 +1,18 @@
+
+|> Ways of creating thread
+|> How to create multiple threads?
+|> Use for loop may be?
+|> Looks like it may not scale!
+|> How about a pool of threads?
+|> ExecutorService to the rescue :)
+|> There are 4 types of ExecutorService
+   > SingleThreadExecutor
+   > FixedThreadPoolExecutor
+   > CachedThreadPool
+   > ScheduledExecutor
+|> Let's code these & understand their working!
+
+
+
+
+

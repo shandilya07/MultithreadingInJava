@@ -1,0 +1,29 @@
+Till now we have learnt a couple of ways in which we can create threads in Java such as creating the threads using extending
+the Thread class and Implementing the runnable interface. How can we create multiple threads? Let's say if we want to run five tasks
+then we can crate the threads in the for loop and runt he tasks. What can we do in we want to perform 500 tasks asynchronously? We can
+for sure create 500 threads using the for loop, right? But, where does it stop? What do we do if have to run 1000 task asynchronously?
+Create 1000 threads in a loop? Well, something doesn't sound right here. Here is the problem. In java 1 thread is equal to 1
+OS level thread. Creating a thread is an expensive operation. So creating 1000s of threads in a loop is certainly not a scalable
+approach. What could be a more practical approach is to have a fixed number of threads and let's create them upfront. Imagine a pool
+of n threads and let these threads handle the 1000 tasks among themselves. And this is exactly what the ExecutorService helps us in
+achieving. In one line, we can define ExecutorService as a tool in Java for managing and running tasks concurrently across threads.
+So Executor service helps us in creating a bunch of threads, a pool of threads, thus the name thread pool and those threads aren't
+killed once they are done executing the task, rather they are reused to execute the other task. Thus, by making use of the ExecutorService
+we save the time needed for thread creation and making things more efficient and manageable.
+
+There are 4 types of executors provided by the Executor Service and these are SingleThreadExecutor, FixedThreadPoolExecutor,
+CachedThreadPool, ScheduledExecutor.
+
+Now what we will be doing is write some code making use of these executors and then understand how do they work. So let's begin!
+
+Let's start with SingleThreadExecutor.
+In the case of Single thread executor the size of the thread pool is just one. So we have just one thread which is going to fetch
+the tasks from the task queue and run it. And if it so happens that due to some exception the thread is killed, the executor will
+recreate the thread and the execution of your tasks won't be stopped. By using this kind of thread pool we can ensure that task 0
+is always run before the task 1 and so forth. Since we have just one thread, it's guaranteed that the tasks would be ran sequentially.
+
+Let's learn about Fixed thread pool executor
+
+
+Let's learn about the Scheduled Executor
+
