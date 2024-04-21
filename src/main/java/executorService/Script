@@ -23,7 +23,28 @@ recreate the thread and the execution of your tasks won't be stopped. By using t
 is always run before the task 1 and so forth. Since we have just one thread, it's guaranteed that the tasks would be ran sequentially.
 
 Let's learn about Fixed thread pool executor
+In the case of fixed thread pool, there is a fixed number of threads. This executor also has a task queue where all the tasks will be 
+enqueued. The threads in the fixed thread pool picks the tasks from the task queue and executes them. When the thread is done with the 
+execution of a task, it goes ahead and picks an another one. This keeps on happening untill all the tasks aren't completed.
+
+Let's learn about the Cachec Thread pool executor
+In the case of CachedThreadPool we don't have a fixed number of threads. The Task Queue here doesn't hold a number of tasks which we submit. 
+The Queue here is of a special type and it's called as synchronous queue. This synchronous queue has space only for a single task. So every 
+time you submit a new task, the cached thread pool holds the task in this synchronous queue and it searches for threads which has been already 
+created and they aren't working acitvely on any task. If no such thread is available, the executor will create a new thread, add it to the thread 
+pool and this newly created thread starts to execute the task which has been submitted. Let's imagine a scenario where 10 threads are execution 10 
+tasks at a given time and then 11th task comes in. Since we don't have a thread 11 to cater to this task, the thread pool will create the 11th thread 
+to execute this new task. So in theory the cached thread pool is capable of creating 1000s of threads. You may wonder, where does this stop if threads 
+are getting created at such a rapid pace? There is a guard rail to keep. thread count in check. After some time threads are done executing the tasks and 
+they are available to pick another task. And if they don't have another task they are killed and this time of idleness is 60 seconds. So cached thread pool 
+indeed is pretty much autoscaling in nature on the basis of task load it has. When there are new tasks to be executed, threads are added and when there are 
+less number of tasks to be executed, a few among the created threads could handle the tasks so the other threads, the idle ones are retired and killed!
 
 
 Let's learn about the Scheduled Executor
+This threadpool is for the kind of tasks which we want to schedule in some manner. The way this works is all the tasks are submitted in a task queue, but 
+this queue is a delay queue. In the delay queue tasks aren't kept in sequential manner. We can understand this to be some sort of	 priority queue where the 
+time of execution is the priority. So if there are two tasks one to be executed at 10 seconds, other to be executed at 1 minute, the task which needs to be 
+executed at 10 seconds from now will seat earlier in the queue towards the front when compared to the task which is supposed to run after a minute. 
+
 
