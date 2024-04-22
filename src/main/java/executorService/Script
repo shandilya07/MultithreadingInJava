@@ -1,50 +1,22 @@
-Till now we have learnt a couple of ways in which we can create threads in Java such as creating the threads using extending
-the Thread class and Implementing the runnable interface. How can we create multiple threads? Let's say if we want to run five tasks
-then we can crate the threads in the for loop and runt he tasks. What can we do in we want to perform 500 tasks asynchronously? We can
-for sure create 500 threads using the for loop, right? But, where does it stop? What do we do if have to run 1000 task asynchronously?
-Create 1000 threads in a loop? Well, something doesn't sound right here. Here is the problem. In java 1 thread is equal to 1
-OS level thread. Creating a thread is an expensive operation. So creating 1000s of threads in a loop is certainly not a scalable
-approach. What could be a more practical approach is to have a fixed number of threads and let's create them upfront. Imagine a pool
-of n threads and let these threads handle the 1000 tasks among themselves. And this is exactly what the ExecutorService helps us in
-achieving. In one line, we can define ExecutorService as a tool in Java for managing and running tasks concurrently across threads.
-So Executor service helps us in creating a bunch of threads, a pool of threads, thus the name thread pool and those threads aren't
-killed once they are done executing the task, rather they are reused to execute the other task. Thus, by making use of the ExecutorService
-we save the time needed for thread creation and making things more efficient and manageable.
+How do we find the ideal pool size for the thread pool?
+Well, like most of the answers in computer science the answer to this question as well is that "it depends". However, It's worth discussing what it depends on? So let's get started!
 
-There are 4 types of executors provided by the Executor Service and these are SingleThreadExecutor, FixedThreadPoolExecutor,
-CachedThreadPool, ScheduledExecutor.
+Imagine that you have a cpu intensive task which needs to be executed. Please note that in Java one thread is one OS level thread. So if your CPU has four cores, then at maximum you could 
+execute 4 tasks in parallel at once. So, on a hardware which can only support upto 4 cores, creating 100s of threads won't help if they are cpu intensive. Infact, it leads to performance 
+degradation. Let's focus more on why there is a performance degradation. When you have 100 threads to run your CPU intensive task, then all such threads will try their best to get their 
+pie of the time allocation with the CPU. When this time slicing happens beyond a certain threshold, the expense of context switching overpowers the benefit we get from making use of the 
+multithreading. So lots of threads contesting for CPU time is counter productive. And in such scenario having too many threads is not a good idea. What we can do rather is have the same 
+number of threads as the number of cores in your cpu. But, please note that having created same number of threads as the number of cores in your cpu doesn't ensure that all the cores will 
+be running your threads only. Some of the cores will be utilised by other tasks and OS level processes as well. So, How can we do this? Let's see a quick code example!
 
-Now what we will be doing is write some code making use of these executors and then understand how do they work. So let's begin!
-
-Let's start with SingleThreadExecutor.
-In the case of Single thread executor the size of the thread pool is just one. So we have just one thread which is going to fetch
-the tasks from the task queue and run it. And if it so happens that due to some exception the thread is killed, the executor will
-recreate the thread and the execution of your tasks won't be stopped. By using this kind of thread pool we can ensure that task 0
-is always run before the task 1 and so forth. Since we have just one thread, it's guaranteed that the tasks would be ran sequentially.
-
-Let's learn about Fixed thread pool executor
-In the case of fixed thread pool, there is a fixed number of threads. This executor also has a task queue where all the tasks will be 
-enqueued. The threads in the fixed thread pool picks the tasks from the task queue and executes them. When the thread is done with the 
-execution of a task, it goes ahead and picks an another one. This keeps on happening untill all the tasks aren't completed.
-
-Let's learn about the Cachec Thread pool executor
-In the case of CachedThreadPool we don't have a fixed number of threads. The Task Queue here doesn't hold a number of tasks which we submit. 
-The Queue here is of a special type and it's called as synchronous queue. This synchronous queue has space only for a single task. So every 
-time you submit a new task, the cached thread pool holds the task in this synchronous queue and it searches for threads which has been already 
-created and they aren't working acitvely on any task. If no such thread is available, the executor will create a new thread, add it to the thread 
-pool and this newly created thread starts to execute the task which has been submitted. Let's imagine a scenario where 10 threads are execution 10 
-tasks at a given time and then 11th task comes in. Since we don't have a thread 11 to cater to this task, the thread pool will create the 11th thread 
-to execute this new task. So in theory the cached thread pool is capable of creating 1000s of threads. You may wonder, where does this stop if threads 
-are getting created at such a rapid pace? There is a guard rail to keep. thread count in check. After some time threads are done executing the tasks and 
-they are available to pick another task. And if they don't have another task they are killed and this time of idleness is 60 seconds. So cached thread pool 
-indeed is pretty much autoscaling in nature on the basis of task load it has. When there are new tasks to be executed, threads are added and when there are 
-less number of tasks to be executed, a few among the created threads could handle the tasks so the other threads, the idle ones are retired and killed!
+<Code Example Follows>
 
 
-Let's learn about the Scheduled Executor
-This threadpool is for the kind of tasks which we want to schedule in some manner. The way this works is all the tasks are submitted in a task queue, but 
-this queue is a delay queue. In the delay queue tasks aren't kept in sequential manner. We can understand this to be some sort of	 priority queue where the 
-time of execution is the priority. So if there are two tasks one to be executed at 10 seconds, other to be executed at 1 minute, the task which needs to be 
-executed at 10 seconds from now will seat earlier in the queue towards the front when compared to the task which is supposed to run after a minute. 
+There is another type of task which is IO intensive. Such IO intensive tasks are inherently fire and forget in nature. This is because IO operations, such as reading from files or making network 
+calls, often involve waiting for external resources to respond. During this waiting period, the CPU is idle, and having more threads allows other tasks to execute while one thread is waiting for 
+IO operations to complete. However, here as well it's not recommended to crazy with countless threads, rather, the more sane approach is experiment with different thread pool sizes. This will 
+help you to find the optimal balance between concurrency and resource utilisation. 
 
+So, to summarise there is no  single answer for the question of what's the ideal thread pool size. What you could instead is analyse your task patterns and based on their type utilise a combination 
+of the above mentioned approaches.
 
