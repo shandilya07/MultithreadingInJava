@@ -1,22 +1,14 @@
-How do we find the ideal pool size for the thread pool?
-Well, like most of the answers in computer science the answer to this question as well is that "it depends". However, It's worth discussing what it depends on? So let's get started!
+Till now we have seen how can we execute threads using the executor service. But, something seems not complete. In all the examples that we have seen so far, 
+we aren't returning anything. What if we want to return something from the thread execution, how can we do that? Let's learn about the same.
 
-Imagine that you have a cpu intensive task which needs to be executed. Please note that in Java one thread is one OS level thread. So if your CPU has four cores, then at maximum you could 
-execute 4 tasks in parallel at once. So, on a hardware which can only support upto 4 cores, creating 100s of threads won't help if they are cpu intensive. Infact, it leads to performance 
-degradation. Let's focus more on why there is a performance degradation. When you have 100 threads to run your CPU intensive task, then all such threads will try their best to get their 
-pie of the time allocation with the CPU. When this time slicing happens beyond a certain threshold, the expense of context switching overpowers the benefit we get from making use of the 
-multithreading. So lots of threads contesting for CPU time is counter productive. And in such scenario having too many threads is not a good idea. What we can do rather is have the same 
-number of threads as the number of cores in your cpu. But, please note that having created same number of threads as the number of cores in your cpu doesn't ensure that all the cores will 
-be running your threads only. Some of the cores will be utilised by other tasks and OS level processes as well. So, How can we do this? Let's see a quick code example!
+<Walk through an earlier implemented code and show how you aren't not able return anything>
 
-<Code Example Follows>
+Discuss the blocking nature of future
 
+Explain the usage of time out
 
-There is another type of task which is IO intensive. Such IO intensive tasks are inherently fire and forget in nature. This is because IO operations, such as reading from files or making network 
-calls, often involve waiting for external resources to respond. During this waiting period, the CPU is idle, and having more threads allows other tasks to execute while one thread is waiting for 
-IO operations to complete. However, here as well it's not recommended to crazy with countless threads, rather, the more sane approach is experiment with different thread pool sizes. This will 
-help you to find the optimal balance between concurrency and resource utilisation. 
+future.cancel()
 
-So, to summarise there is no  single answer for the question of what's the ideal thread pool size. What you could instead is analyse your task patterns and based on their type utilise a combination 
-of the above mentioned approaches.
+future.isCancelled()
 
+future.isDone() : Returns true even if thread got terminated due to some exception
