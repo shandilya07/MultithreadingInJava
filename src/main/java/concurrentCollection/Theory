@@ -1,0 +1,15 @@
+||=======================||
+|| CONCURRENT COLLECTIONS||
+||=======================||
+
+|> Most of the Java collections are not thread safe
+|> Ways to make collections thread safe
+   => Use Collections.synchronize() method
+   => Use the concurrent collections which are synchronized
+
+|> Downsides of using the Collections.synchronized() approach
+   => Coarse grained locking
+   => Limited functionality
+   => No Fail Fast Iterators
+   => Performance Overhead
+
