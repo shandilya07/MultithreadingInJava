@@ -14,6 +14,7 @@
    => Performance Overhead
 
 
+
 ||>>=============<<||
 || Countdown Latch ||
 ||>>=============<<||
@@ -26,4 +27,13 @@
   > Usage
 |> Can we reset the count?
 
+
+
+||>>============<<||
+|| Cyclic Barrier ||
+||>>============<<||
+
+|> Introduction to Cyclic Barrier
+|> Code Demonstration
+|> How does Cyclic Barrier work under the hood?
 
