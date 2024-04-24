@@ -13,3 +13,15 @@
    => No Fail Fast Iterators
    => Performance Overhead
 
+
+||>>=============<<||
+|| Countdown Latch ||
+||>>=============<<||
+
+|> Introduction to countdown latch
+|> When to use countdown latch
+|> Code demonstration
+|> Is it functionally similar to join?
+  > Purpose
+  > Usage
+|> Can we reset the count?
