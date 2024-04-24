@@ -1,0 +1,27 @@
+||=======================||
+|| CONCURRENT COLLECTIONS||
+||=======================||
+
+|> Most of the Java collections are not thread safe
+|> Ways to make collections thread safe
+   => Use Collections.synchronize() method
+   => Use the concurrent collections which are synchronized
+
+|> Downsides of using the Collections.synchronized() approach
+   => Coarse grained locking
+   => Limited functionality
+   => No Fail Fast Iterators
+   => Performance Overhead
+
+
+||>>=============<<||
+|| Countdown Latch ||
+||>>=============<<||
+
+|> Introduction to countdown latch
+|> When to use countdown latch
+|> Code demonstration
+|> Is it functionally similar to join?
+  > Purpose
+  > Usage
+|> Can we reset the count?
