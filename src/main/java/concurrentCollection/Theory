@@ -37,3 +37,28 @@
 |> Code Demonstration
 |> How does Cyclic Barrier work under the hood?
 
+
+||>>============<<||
+|| Blocking Queue ||
+||>>============<<||
+
+|> Introduction to Blocking Queue
+   > Blocking Queue Interfaces
+     => BlockingDeque
+     => TransferQueue
+
+   > Major implementations
+     => ArrayBlockingQueue
+     => LinkedBLockingQueue
+     => PriorityBlockingQueue
+     => DelayQueue
+     => SynchronousQueue
+
+   > Blocking Queue Operations
+     => add(E e)
+     => offer(E e)
+     => E poll()
+
+|> Code Demonstration
+|> How does Blocking Queue work under the hood?
+
