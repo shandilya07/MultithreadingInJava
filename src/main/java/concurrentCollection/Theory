@@ -44,21 +44,22 @@
 
 |> Introduction to Blocking Queue
    > Blocking Queue Interfaces
-     => BlockingDeque
-     => TransferQueue
+     => BlockingQueue
+        >> BlockingDeque
+        >> TransferQueue
 
    > Major implementations
      => ArrayBlockingQueue
-     => LinkedBLockingQueue
+     => LinkedBlockingQueue
      => PriorityBlockingQueue
      => DelayQueue
      => SynchronousQueue
 
    > Blocking Queue Operations
-     => add(E e)
+     => put(E e)
+     => take()
      => offer(E e)
-     => E poll()
+     => poll()
+     => peek()
 
 |> Code Demonstration
-|> How does Blocking Queue work under the hood?
-
