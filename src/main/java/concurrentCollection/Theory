@@ -82,4 +82,35 @@
 
 |> Internal implementation and working of Concurrent Map
    > Adding an element to concurrent hash map
+     1. Hashing and Determining Segment
+     2. Acquiring Lock
+     3. Insertion in Segment
+     4. Releasing Lock
+
    > Fetching an element from concurrent hash map
+     1. Hashing and Determining Segment
+     2. Acquiring Lock
+     3. Searching in Segment
+     4. Releasing Lock
+
+||>>============<<||
+||    Exchanger   ||
+||>>============<<||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
