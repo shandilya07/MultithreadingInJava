@@ -99,8 +99,25 @@
 ||    Exchanger   ||
 ||>>============<<||
 
+|> Introduction to Exchanger
+   > What is Exchanger in Java?
+   > Why and when to use Exchangers?
+   > ELI5
 
-
+|> Exchanger implementation in Java
+|> Code Demonstration
+|> Comparing Queue with Exchanger
+   > Exchanger
+     -> Point to Point communication
+     -> Simplicity for two threads
+     -> Synchronous
+     -> Symmetrical exchange
+   > Queue
+     -> One to many communication
+     -> Asynchronous
+     -> Buffering
+     -> Non symmetrical exchange
+|> Similarity to Synchronous Queue
 
 
 
