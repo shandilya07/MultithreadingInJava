@@ -120,10 +120,17 @@
 |> Similarity to Synchronous Queue
 
 
+||>>===============<<||
+||Copy On Write Array||
+||>>===============<<||
 
-
-
-
+|> Introduction to COWA
+   > What is COWA?
+   > Why and When to use COWA
+|> Code Demonstration
+|> How it works?
+|> Comparing the approach to Git branching!
+|> Let's visualise!
 
 
 
