@@ -1,0 +1,19 @@
+||=======||
+|| LOCKS ||
+||=======||
+
+|> Introduction to Locks
+    -> What are Locks?
+    -> Why are Locks important?
+
+|> Synchronized Blocks VS Locks
+    -> Comparison of Synchronised Blocks & Locks
+
+|> Lock Conditions
+    -> What are Conditions?
+    -> Let's visualise these Conditions
+    -> Code Demonstration
+
+|> Reentrant Locks
+|> Readwrite Locks
+|> Spin Locks
