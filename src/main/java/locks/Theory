@@ -20,6 +20,29 @@
 
 
 
+||==============||
+||Reentrant Lock||
+||==============||
+
+|> What is Reentrant Lock?
+|> How does this work?
+|> When Reentrant locks are needed?
+|> Code Demonstration <|
+|> Lock Fairness
+|> Important methods of Reentrant Locks
+    -> getHoldCount()
+    -> tryLock()
+    -> tryLock(timeout, timeUnit)
+    -> tryLock() has a problem
+    -> isHeldByCurrentThread()
+    -> getQueueLength()
+    -> newCondition()
+
+
+
+
+
+
 
 
 
