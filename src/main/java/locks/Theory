@@ -10,14 +10,14 @@
 |> Synchronized Blocks VS Locks
     -> Comparison of Synchronised Blocks & Locks
 
-|> Lock Conditions
-    -> What are Conditions?
-    -> Let's visualise these Conditions
-    -> Code Demonstration
 
+||=================||
+|| Lock Conditions ||
+||=================||
 
-
-
+|> What are Conditions?
+|> Let's visualise these Conditions
+|> Code Demonstration
 
 
 ||==============||
@@ -27,9 +27,9 @@
 |> What is Reentrant Lock?
 |> How does this work?
 |> When Reentrant locks are needed?
-|> Code Demonstration <|
+|> Code Demonstration
 |> Lock Fairness
-|> Important methods of Reentrant Locks
+|> Important methods of Reentrant Locks <|
     -> getHoldCount()
     -> tryLock()
     -> tryLock(timeout, timeUnit)
@@ -37,6 +37,7 @@
     -> isHeldByCurrentThread()
     -> getQueueLength()
     -> newCondition()
+
 
 
 
