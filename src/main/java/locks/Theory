@@ -39,11 +39,22 @@
     -> newCondition()
 
 
+
+
+
+
+
+
+
+
+
+
+
 ||================||
 || Read Write Lock||
 ||================||
 
-|> Introduction
+|> Introduction <|
 |> Code Demonstration
 |> Wait Queue in ReadWrite Lock
 
@@ -57,6 +68,11 @@
 
 
 
-|> Reentrant Locks
-|> Readwrite Locks
+
+
+
+
+
+
+
 |> Spin Locks
