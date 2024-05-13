@@ -47,34 +47,3 @@
 |> Code Demonstration
 |> Wait Queue in ReadWrite Lock
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-||============||
-|| Spin Locks ||
-||============||
-
-
-
-
-
-
-
-
-
-
