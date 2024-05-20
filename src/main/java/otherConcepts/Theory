@@ -1,3 +1,9 @@
+
+
+
+
+
+
 |================|
 |Volatile Keyword|
 |================|
@@ -5,3 +11,35 @@
 |> Core, Register & Cache
 |> The Visibility Problem
 |> Volatile Keyword To Rescue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|=========|
+|Deadlocks|
+|=========|
+|> What is a Deadlock?
+|> How to Spot dead locks?
+    -> Manual approach
+    -> Programmatic approach to detect deadlock
+|> Code Demonstration
+
+
+
+
+
+
+
+
+
+
