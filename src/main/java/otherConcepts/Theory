@@ -33,6 +33,11 @@
     -> Manual approach
     -> Programmatic approach to detect deadlock
 |> Code Demonstration
+|> How to Prevent Deadlocks?
+    -> Use Timeouts
+    -> Global ordering of locks
+    -> Avoid nesting of locks
+    -> Use Thread safe alternatives
 
 
 
