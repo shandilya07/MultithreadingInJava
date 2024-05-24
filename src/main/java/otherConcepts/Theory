@@ -48,3 +48,34 @@
 
 
 
+
+
+|===============|
+|Atomic Variable|
+|===============|
+|> What's read-modify-write cycle?
+|> What are Atomic Variables?
+|> Different types of Atomic Variables
+    -> AtomicInteger
+    -> AtomicBoolean
+    -> AtomicLong
+|> Basic operations
+    -> get()
+    -> set()
+    -> compareAndSet(expected, update)
+    -> getAndIncrement() / incrementAndGet()
+    -> getAndDecrement() / decrementAndGet()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
