@@ -76,5 +76,30 @@
 
 
 
+|==========|
+|Semaphores|
+|==========|
+|> What are semaphores?
+|> Let's Visualise Semaphores
+|> Code Demonstration
+|> Multiple Permits
+|> Methods of Semaphores
+    -> tryAcquire()
+    -> tryAcquire(timeout)
+    -> availablePermits()
+    -> new Semaphore(count, fairness)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
