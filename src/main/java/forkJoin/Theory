@@ -16,8 +16,8 @@
 |> Key Concepts in Fork Join Framework
     -> Forking
     -> Joining
-    -> Recursive Task
-    -> Recursive Action
+    -> RecursiveTask
+    -> RecursiveAction
 |> Fork Join Pool
     -> Work Stealing Algorithm
     -> Parallelism
